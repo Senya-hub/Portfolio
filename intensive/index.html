@@ -1,0 +1,407 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Senya JScript</title>
+    <style>
+        html, body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .fixed-container {
+            width: 1000px;
+            margin: 0 auto 0 auto;
+        }
+        header {
+            height: 120px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        nav a {
+            margin-right: 20px;
+            color: black;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .phone-button {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .light-button {
+            margin-left: 20px;
+            border: 1px solid gray;
+            background-color: transparent;
+            border-radius: 5px;
+            padding: 10px 30px 10px 30px;
+            cursor: pointer;
+        }
+
+
+        .first-block {
+            height: 386px;
+            background-image: url('./img/man.png');
+            background-size: 400px;
+            background-repeat: no-repeat;
+            background-position: right center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: left;
+        }
+        h1 {
+            font-size: 46px;
+            line-height: 58px;
+            margin: 0;
+            margin-bottom: 10px;
+        }
+        .first-description {
+            font-size: 20px;
+            line-height: 29px;
+            margin-bottom: 28px;
+        }
+        .first-block button {
+            width: 228px;
+            margin-left: 0;
+            border: 1px blue;
+            background-color: blue;
+            color: white;
+            border-radius: 5px;
+            padding: 15px 40px 15px 40px;
+            font-size: 18px;
+            line-height: 20px;
+            cursor: pointer;
+        }
+        
+        .services-block {
+            margin-bottom: 91px;
+        }
+        h2 {
+            margin-bottom: 26px;
+            font-size: 34px;
+            line-height: 59px;
+        }
+        .services-list {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0 34px 0;
+        }
+        .services-list div {
+            padding-top: 127px;
+            background-size: 114px;
+            background-repeat: no-repeat;
+            background-position: left top;
+        }
+        .services-block button {
+            width: 228px;
+            margin-left: 0;
+            border: 1px blue;
+            background-color: blue;
+            color: white;
+            border-radius: 5px;
+            padding: 15px 40px 15px 40px;
+            font-size: 18px;
+            line-height: 20px;
+            cursor: pointer;
+        }
+        .service-1 {
+            background-image: url('./img/1.png');
+        }
+
+        .service-2 {
+            background-image: url('./img/2.png');
+        }
+
+        .service-3 {
+            background-image: url('./img/3.png');
+        }
+
+        .service-4 {
+            background-image: url('./img/4.png');
+        }
+
+        
+        .site-list {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0 20px 0;
+        }
+        .site-list div {
+            width: 302.61px;
+            height: 33.97px;
+            padding-top: 220px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: left top;
+        }
+        .site-block button {
+            width: 228px;
+            margin-left: 0;
+            border: 1px blue;
+            background-color: blue;
+            color: white;
+            border-radius: 5px;
+            padding: 15px 40px 15px 40px;
+            font-size: 18px;
+            line-height: 20px;
+            cursor: pointer;
+        }
+        .site-1 {
+            background-image: url('./img/e1.png');
+        }
+
+        .site-2 {
+            background-image: url('./img/e2.png');
+        }
+
+        .site-3 {
+            background-image: url('./img/e3.png');
+        }
+          /* PRICES BLOCK STYLES */
+          .prices-block {
+            margin: 60px 0 60px 0;
+            background-color: blue;
+            padding: 60px 0 60px 0;
+            color: white;
+        }
+        .price-text {
+            font-weight: bold;
+            font-size: 32px;
+            margin-bottom: 50px;
+        }
+
+         /* PRICES BLOCK STYLES */
+
+         .popup-layout {
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            background-color: #0000009e;
+            z-index: 10;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup {
+            width: 300px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .popup-close {
+            height: 32px;
+            width: 32px;
+            float: right;
+            background-image: url('./img/close.png');
+            background-size: 30px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            clear: both;
+            cursor: pointer;
+        }
+
+        h3 {
+            margin: 0;
+        }
+
+        .form-field {
+            margin: 20px 0 20px 0;
+        }
+        .form-field input {
+            width: 80%;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer-block {
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer-nav {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .footer-nav a {
+            margin-bottom: 11px;
+        }
+        .phone {
+            margin-bottom: 11px;
+        }
+        li {
+            list-style-type: none;
+            margin-right: 40px;
+            padding-top: 10px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: left top;
+        }
+        .footer-social ul{
+            display: flex;
+            padding: 0;
+        }
+        .social-1 {
+            width: 6px;
+            height: 6px;
+            background-image: url(./img/fb.png);
+        }
+        .social-2 {
+            width: 10px;
+            height: 10px;
+            background-image: url(./img/inst.png);
+        }
+        .social-3 {
+            width: 10px;
+            height: 10px;
+            background-image: url(./img/telegram.png);
+        }
+        .social-4 {
+            width: 10px;
+            height: 10px;
+            background-image: url(./img/vk.png);
+        }
+        .social-5 {
+            width: 10px;
+            height: 10px;
+            background-image: url(./img/you.png);
+        }
+      
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('button').on('click', function(){
+                $('.popup-layout').css('display', 'flex');
+            });
+
+            $('.popup-layout').on('click', function(event){
+                if(event.target === this) {
+                    $('.popup-layout').css('display', 'none');
+                }
+            });
+
+            $('.popup-close').on('click', function(){
+                $('.popup-layout').css('display', 'none');
+            });
+
+            $('input[type="submit"]').on('click', function(){
+                let request = {
+                    'name': $('#name').val(),
+                    'email': $('#email').val()
+                };
+                $.post('/api.php', request, function(response){
+                    if(response == '1') {
+                        $('.popup-layout').css('display', 'none');
+                    } else {
+                        alert('Ошибка :(');
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="popup-layout">
+        <div class="popup">
+            <div class="popup-close"></div>
+            <h3>Оставьте заявку</h3>
+            <div class="form-field">
+                <input type="text" placeholder="Имя" id="name">
+            </div>
+            <div class="form-field">
+                <input type="email" placeholder="E-mail" id="email">
+            </div>
+            <div class="button-container">
+                <input type="submit" class="light-button" value="Отправить">
+            </div>
+        </div>
+    </div>
+    <header class="fixed-container">
+        <nav>
+            <a href="#">Услуги</a>
+            <a href="#">Портфолио</a>
+            <a href="#">Стоимость</a>
+        </nav>
+        <div class="phone-button">
+            <div>+7 999 999-99-99</div>
+            <button class="light-button">Заказать звонок</button>
+        </div>
+    </header>
+    <section class="fixed-container first-block">
+        <h1>Senya JScript</h1>
+        <div class="first-description">Fronted-разработчик и веб-верстальщик</div>
+        <button class="light-button">Узнать больше</button>
+    </section>
+    <section class="fixed-container services-block">
+        <h2>Что я делаю</h2>
+        <div class="services-list">
+            <div class="service-1">Вёрстка лендинг-страниц<br>и сайтов любой сложности</div>
+            <div class="service-2">Адаптивная вёрстка под<br>все браузеры и устройства</div>
+            <div class="service-3">Frontend-разработка<br>и программирование</div>
+            <div class="service-4">Исправление и доработка<br>существующей вёрстки</div>
+        </div>
+        <button class="light-button">Узнать стоимость</button>
+    </section>
+    <section class="fixed-container site-block">
+        <h2>Примеры работ</h2>
+        <div class="site-list">
+            <div class="site-1">Сайт психолога Веры Антоновой</div>
+            <div class="site-2">Сайт магазина детской одежды</div>
+            <div class="site-3">Сайт магазина "Рыболов"</div>
+        </div>
+        <button class="light-button">Заказать проект</button>
+    </section>
+    <!-- PRICES BLOCK -->
+    <section class="prices-block">
+        <div class="fixed-container">
+            <div class="price-text">
+                Адаптивная вёрстка под все<br>
+                устройства и браузеры<br>
+                от 1000 р. всего за 4 часа.*
+            </div>
+            <small>* Срок и стоимость могут отличаться от заявленных и рассчитываются<br>индивидуально в зависимости от сложности задач.</small>
+        </div>
+    </section>
+    <!--/PRICES BLOCK -->
+    <footer class="fixed-container footer-block">
+        <nav class="footer-nav">
+            <a href="#">Услуги</a>
+            <a href="#">Портфолио</a>
+            <a href="#">Стоимость</a>
+        </nav>
+        <div class="footer-phone">
+            <div class="phone">+7 999 999-99-99</div>
+            <div class="mail">js.senya@gmail.com</div>
+        </div>
+        <div class="footer-social">
+            <button class="light-button">Заказать звонок</button>
+            <ul>
+                <li class="social-1"></li>
+                <li class="social-2"></li>
+                <li class="social-3"></li>
+                <li class="social-4"></li>
+                <li class="social-5"></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
+<!-- CREATE TABLE orders(id INT NOT NULL AUTO_INCREMENT, `time` DATETIME NOT NULL, name TINYTEXT, email TINYTEXT, PRIMARY KEY(id)); -->
